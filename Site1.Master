@@ -1,0 +1,170 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Khenza_Foster_Care.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link rel="icon" type="image/jpeg" href="images/child.jpeg">
+<title>Khenza Foster Care</title>
+
+ <%--  Bootstrap css--%>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+ <%--    datatables css--%>
+    <link href="DataTables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+     <%--    datatables js--%>
+    <script defer src="DataTables/js/dataTables.min.js"></script>
+<%--   fontawesome css--%>
+    <link href="Fontawesome/css/all.css" rel="stylesheet" />
+<%--  custom css--%>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+<%--   jquery--%>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+<%--   popper js--%>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+<%--  boostrap min--%>
+    <script src="Bootstrap/js/popper.min.js"></script>
+<%--  dataTable js--%>
+    <script src="DataTables/js/dataTables.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+<div>
+  <%--create navigation classes--%>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #808080;">
+    <a class="navbar-brand" href="#">
+      <img src="icons/Adoption.png" width="30" height="30" />
+      Foster_Care
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="homepage.aspx">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="About.aspx">About Us</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="Terms.aspx">Terms</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <asp:LinkButton class="nav-link text-white" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Log In</asp:LinkButton>
+        </li>
+        <li class="nav-item active">
+          <asp:LinkButton class="nav-link text-white" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Sign up</asp:LinkButton>
+        </li>
+        <li class="nav-item active">
+          <asp:LinkButton class="nav-link text-white" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Logout</asp:LinkButton>
+        </li>
+        <li class="nav-item active">
+          <asp:LinkButton class="nav-link text-white" ID="LinkButton5" runat="server">Hello user</asp:LinkButton>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="heading2" class="container-fluid text-center">
+    <center>
+      <h2>Khenza Foster Care</h2>
+    </center>
+  </div>
+</div>
+
+       
+     <%--Main Content Placeholder--%> 
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+   <footer>
+
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 col-sm-12 text-center">
+                        <p>
+                             <asp:LinkButton class="footerlink" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click" ForeColor="White">CaseWorker LogIn</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlink" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" ForeColor="White">CaseWorker Managment</asp:LinkButton>
+                            &nbsp;
+&nbsp;                      &nbsp
+                         <asp:LinkButton class="footerlink" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" ForeColor="White">Matching Manager</asp:LinkButton>
+&nbsp;
+                            &nbsp
+                             <asp:LinkButton class="footerlink" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" ForeColor="White">Child placement</asp:LinkButton>
+&nbsp;                      &nbsp
+                             <asp:LinkButton class="footerlink" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" ForeColor="White">Adopt child</asp:LinkButton>
+&nbsp;                      &nbsp
+                         <asp:LinkButton class="footerlink" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ForeColor="White">check Status</asp:LinkButton>
+&nbsp;
+                             &nbsp
+                         <asp:LinkButton class="footerlink" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" ForeColor="White">View my Profile</asp:LinkButton>
+&nbsp;
+                               &nbsp
+                         <asp:LinkButton class="footerlink" ID="LinkButton12" runat="server" ForeColor="White" OnClick="LinkButton12_Click">Admin Login</asp:LinkButton>
+&nbsp;
+                             &nbsp
+                         <asp:LinkButton class="footerlink" ID="LinkButton13" runat="server" ForeColor="White" OnClick="LinkButton13_Click">Child issued</asp:LinkButton>
+&nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+<div class="container-fluid bg-dark text-light mt-5 py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
+                <p class="mb-4">Find us on Eastern Cape or connect with us on this application</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>116 Khenza RD, Eastern Cape</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>KhenzaFoster@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>0722352034</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Home</a></li>
+                    <li><a href="#" class="text-light">About Us</a></li>
+                    <li><a href="#" class="text-light">Contact Us</a></li>
+                    <li><a href="#" class="text-light">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Social Media</h4>
+               <ul class="list-unstyled"> 
+    <li><a href="https://www.facebook.com/your-facebook-page" target="_blank" class="text-light"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li> 
+    <li><a href="https://twitter.com/your-twitter-handle" target="_blank" class="text-light"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li> 
+    <li><a href="https://www.instagram.com/your-instagram-handle" target="_blank" class="text-light"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li> 
+    <li><a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="text-light"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li> 
+</ul>
+
+
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Newsletter</h4>
+                <p class="mb-4">Subscribe to our newsletter to get the latest updates</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer2" class="container-fluid bg-dark text-light py-3">
+    <div class="row">
+        <div class="col-xl-12 col-sm-12 text-center">
+            <p>&copy; 2024 All Rights Reserved. <a class="footerlinks text-light" href="#" target="_blank">Khenza Foster Care</a></p>
+        </div>
+    </div>
+</div>
+
+        </footer>
+    </form>
+</body>
+</html>
